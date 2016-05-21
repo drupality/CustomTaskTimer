@@ -1,39 +1,53 @@
-<idea-plugin version="2">
-  <id>pl.codium.tasktimer</id>
-  <name>Task Timer</name>
-  <version>1.0</version>
-  <vendor email="marekjkisiel@gmail.com" url="http://codium.pl">Codium</vendor>
+<idea-plugin version="1.0">
+    <id>tasktimer</id>
+    <name>Task Timer</name>
+    <version>1.0</version>
+    <vendor email="marekjkisiel@gmail.com" url="http://codium.pl">Codium</vendor>
 
-  <description>Provides integration of tasks list with timer services like Toggl</description>
+    <description>Provides integration of tasks list with timer services like Toggl</description>
 
-  <change-notes><![CDATA[
+    <change-notes><![CDATA[
       Add change notes here.<br>
       <em>most HTML tags may be used</em>
     ]]>
-  </change-notes>
+    </change-notes>
 
-  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-  <idea-version since-build="131"/>
+    <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="131"/>
 
-  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
-  <depends>com.intellij.modules.lang</depends>
-  -->
+    <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
 
-  <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
-  </extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <projectConfigurable instance="tasktimer.TaskTimerConfigurable">
+    </extensions>
 
-  <application-components>
-    <!-- Add your application components here -->
-  </application-components>
+    <application-components>
+        <!-- Add your application components here -->`
+    </application-components>
 
-  <project-components>
-    <!-- Add your project components here -->
-  </project-components>
+    <project-components>
+        <component>
+            <!-- Interface and implementation classes are the same -->
+            <interface-class>com.intellij.openapi.components.ProjectComponent</interface-class>
+            <implementation-class>tasktimer.TaskTimerComponent</implementation-class>
+            <!-- If the "workspace" option is set "true", the component
+                 saves its state to the .iws file instead of the .ipr file.
+                 Note that the <option> element is used only if the component
+                 implements the JDOMExternalizable interface. Otherwise, the
+                 use of the <option> element takes no effect.  -->
+            <option name="workspace" value="true"/>
 
-  <actions>
-    <!-- Add your actions here -->
-  </actions>
+            <!-- If the "loadForDefaultProject" tag is present, the project component is instantiated also for the default project. -->
+            <loadForDefaultProject>
+        </component>
+    </project-components>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
 </idea-plugin>
