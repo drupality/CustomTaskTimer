@@ -20,7 +20,7 @@ public class TaskTimerConfigurable implements Configurable {
     @Nullable
     @Override
     public String getHelpTopic() {
-        return null;
+        return "Please specify time tracking provider if available";
     }
 
     @Nullable
