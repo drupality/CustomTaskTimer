@@ -23,7 +23,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
-        <!--<projectConfigurable instance="tasktimer.TaskTimerConfigurable">-->
+        <projectConfigurable instance="tasktimer.TaskTimerConfigurable" />
     </extensions>
 
     <application-components>
@@ -46,7 +46,6 @@
             <loadForDefaultProject>
         </component>
     </project-components>
-
     <actions>
         <!-- Add your actions here -->
     </actions>
