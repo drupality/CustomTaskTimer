@@ -2,7 +2,7 @@
     <id>tasktimer</id>
     <name>Task Timer</name>
     <version>1.0</version>
-    <vendor email="marekjkisiel@gmail.com" url="http://codium.pl">Codium</vendor>
+    <vendor email="marekjkisiel@gmail.com" url="http://codium.pl">Marek Kisiel - drupality</vendor>
 
     <description>Provides integration of tasks list with timer services like Toggl</description>
 
@@ -10,7 +10,7 @@
       Add change notes here.<br>
       <em>most HTML tags may be used</em>
     ]]>
-    </change-notes>
+    </change-notes>31
 
     <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
     <idea-version since-build="131"/>
@@ -43,7 +43,7 @@
             <option name="workspace" value="true"/>
 
             <!-- If the "loadForDefaultProject" tag is present, the project component is instantiated also for the default project. -->
-            <loadForDefaultProject>
+            <loadForDefaultProject />
         </component>
     </project-components>
     <actions>

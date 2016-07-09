@@ -11,5 +11,6 @@
     <orderEntry type="library" name="idea" level="project" />
     <orderEntry type="library" exported="" name="tasks" level="project" />
     <orderEntry type="library" name="jtoggl-api-1.0.1-20140317.125100-3" level="project" />
+    <orderEntry type="library" name="jersey" level="project" />
   </component>
 </module>
