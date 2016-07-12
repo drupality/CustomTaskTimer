@@ -13,6 +13,4 @@ public interface TaskTimer {
 
     public void stop();
 
-    public boolean isConnected();
-
 }

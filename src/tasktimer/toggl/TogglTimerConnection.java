@@ -1,5 +1,6 @@
 package tasktimer.toggl;
 
+import com.intellij.util.containers.hash.HashMap;
 import com.intellij.util.io.HttpRequests;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
@@ -46,14 +47,13 @@ public class TogglTimerConnection implements TimerConnection {
         String token = this.getToken();
 
         try {
-            Object response = HttpRequests.request("https://www.toggl.com/api/v8/me")
+            Object response = HttpRequests.request("https://www.toggl.com/api/v8/me?with_related_data=true")
                     .accept("application/json")
                     .tuner(new HttpRequests.ConnectionTuner() {
                         @Override
                         public void tune(@NotNull URLConnection connection) throws IOException {
                             String credentials = Base64.encode(new String(token + ":api_token").getBytes());
                             connection.setRequestProperty("Authorization", "Basic " + credentials);
-
                         }
                     })
                     .connect(new HttpRequests.RequestProcessor<Object>() {

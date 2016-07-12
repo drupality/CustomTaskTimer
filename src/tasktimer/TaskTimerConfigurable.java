@@ -62,9 +62,10 @@ public class TaskTimerConfigurable implements Configurable {
         togglSection = new JPanel(new HorizontalLayout(5));
         JLabel label = new JLabel("Toggl API Token");
         JButton connectToggl = new JButton("Fetch projects");
-        connectToggl.setEnabled(false);
+        //connectToggl.setEnabled(false);
         token = new JTextField();
         token.setColumns(20);
+        //remove it in production
         token.setText("de93f242dc2445d8c0ac9187167e0b76");
         label.setLabelFor(token);
 
